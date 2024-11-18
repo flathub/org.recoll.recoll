@@ -38,8 +38,12 @@ modules:
       - type: archive
         url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
         sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
+        x-checker-data:
+          type: anitya
+          project-id: 15919
+          url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
 
-  - name: dictEn-aspell
+  - name: aspell-en
     buildsystem: simple
     build-commands:
       - ./configure
@@ -49,6 +53,10 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
         sha256: 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3
+        x-checker-data:
+          type: anitya
+          project-id: 7838
+          url-template: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2
 
   - name: boost
     buildsystem: simple
@@ -61,6 +69,10 @@ modules:
       - type: archive
         url: https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.bz2
         sha256: 1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b
+        x-checker-data:
+          type: anitya
+          project-id: 6845
+          url-template: https://archives.boost.io/release/$version/source/boost_$major_$minor_$patch.tar.bz2
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -75,6 +87,10 @@ modules:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-24.11.0.tar.xz
         sha256: 7723d880565211740c13649d24a300257b86ddd7fa2d208187ff7e5cc8dfbd58
+        x-checker-data:
+          type: anitya
+          project-id: 3686
+          url-template: https://poppler.freedesktop.org/poppler-$version.tar.xz
 
   - name: perl
     cleanup:
@@ -83,6 +99,10 @@ modules:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz
         sha256: c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f
+        x-checker-data:
+          type: html
+          url: https://www.perl.org/get.html
+          pattern: (https://www.cpan.org/src/([\d\.]+)/perl-([\d\.]+).tar.gz)
       - type: script
         dest-filename: configure
         commands:
@@ -99,6 +119,10 @@ modules:
       - type: archive
         url: https://exiftool.org/Image-ExifTool-13.03.tar.gz
         sha256: 0912e1315318889574f355e5832340632c556a14d30711e94d801085ad0a8e4f
+        x-checker-data:
+          type: anitya
+          project-id: 6175
+          url-template: https://exiftool.org/Image-ExifTool-$version.tar.gz
 
   - name: recoll
     buildsystem: meson
@@ -113,3 +137,7 @@ modules:
       - type: archive
         url: https://recoll.org/recoll-1.40.4.tar.gz
         sha256: a48503c4b0040dc1a476340cb7a1afb34366c21ae665bdad3c9ef8958845c1fa
+        x-checker-data:
+          type: anitya
+          project-id: 6256
+          url-template: https://recoll.org/recoll-$version.tar.gz
