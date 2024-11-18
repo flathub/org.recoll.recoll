@@ -152,6 +152,8 @@ modules:
 
   - python3-mutagen.json
 
+  - python3-PyYAML.json
+
   - name: xapian-core
     config-opts:
       - --disable-sse
