@@ -148,6 +148,8 @@ modules:
 
   - python3-jupyter.json
 
+  - python3-lxml.json
+
   - name: xapian-core
     config-opts:
       - --disable-sse
