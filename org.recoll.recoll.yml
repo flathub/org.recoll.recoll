@@ -34,23 +34,6 @@ cleanup-commands:
   - /app/cleanup-BaseApp.sh
 
 modules:
-  - name: xapian-core
-    config-opts:
-      - --disable-sse
-      - --disable-backend-chert
-      - --disable-backend-remote
-      - --disable-documentation
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
-        sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
-        x-checker-data:
-          type: anitya
-          project-id: 15919
-          url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
-
   - name: aspell-en
     buildsystem: simple
     build-commands:
@@ -164,6 +147,23 @@ modules:
           url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
 
   - python3-jupyter.json
+
+  - name: xapian-core
+    config-opts:
+      - --disable-sse
+      - --disable-backend-chert
+      - --disable-backend-remote
+      - --disable-documentation
+    cleanup:
+      - /bin
+    sources:
+      - type: archive
+        url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
+        sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
+        x-checker-data:
+          type: anitya
+          project-id: 15919
+          url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
 
   - name: recoll
     buildsystem: meson
