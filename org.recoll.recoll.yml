@@ -8,6 +8,9 @@ command: recoll
 rename-desktop-file: recoll-searchgui.desktop
 rename-icon: recoll
 
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -16,6 +19,10 @@ finish-args:
   - --filesystem=home
   - --env=ASPELL_CONF=dict-dir /app/share/dicts; local-data-dir /app/share/datadicts
   - --env=ANTIWORDHOME=/app/share/antiword
+  - --env=JUPYTER_DATA_DIR=/app/share/jupyter
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
 
 cleanup:
   - '*.a'
@@ -145,6 +152,18 @@ modules:
           type: anitya
           project-id: 6175
           url-template: https://exiftool.org/Image-ExifTool-$version.tar.gz
+
+  - name: libzmq
+    sources:
+      - type: archive
+        url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz
+        sha256: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
+        x-checker-data:
+          type: anitya
+          project-id: 16245
+          url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
+
+  - python3-jupyter.json
 
   - name: recoll
     buildsystem: meson
