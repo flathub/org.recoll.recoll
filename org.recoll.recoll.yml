@@ -15,6 +15,7 @@ finish-args:
   - --device=dri
   - --filesystem=home
   - --env=ASPELL_CONF=dict-dir /app/share/dicts; local-data-dir /app/share/datadicts
+  - --env=ANTIWORDHOME=/app/share/antiword
 
 cleanup:
   - '*.a'
@@ -57,6 +58,17 @@ modules:
           type: anitya
           project-id: 7838
           url-template: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2
+
+  - name: antiword
+    buildsystem: simple
+    build-commands:
+      - make
+      - cp antiword /app/bin
+      - cp -r Resources /app/share/antiword
+    sources:
+      - type: archive
+        url: https://web.archive.org/web/20221117105329if_/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz
+        sha256: 8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac
 
   - name: boost
     buildsystem: simple
