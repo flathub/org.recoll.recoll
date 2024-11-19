@@ -8,6 +8,9 @@ command: recoll
 rename-desktop-file: recoll-searchgui.desktop
 rename-icon: recoll
 
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -15,6 +18,11 @@ finish-args:
   - --device=dri
   - --filesystem=home
   - --env=ASPELL_CONF=dict-dir /app/share/dicts; local-data-dir /app/share/datadicts
+  - --env=ANTIWORDHOME=/app/share/antiword
+  - --env=JUPYTER_DATA_DIR=/app/share/jupyter
+
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
 
 cleanup:
   - '*.a'
@@ -26,23 +34,6 @@ cleanup-commands:
   - /app/cleanup-BaseApp.sh
 
 modules:
-  - name: xapian-core
-    config-opts:
-      - --disable-sse
-      - --disable-backend-chert
-      - --disable-backend-remote
-      - --disable-documentation
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
-        sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
-        x-checker-data:
-          type: anitya
-          project-id: 15919
-          url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
-
   - name: aspell-en
     buildsystem: simple
     build-commands:
@@ -57,6 +48,17 @@ modules:
           type: anitya
           project-id: 7838
           url-template: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2
+
+  - name: antiword
+    buildsystem: simple
+    build-commands:
+      - make
+      - cp antiword /app/bin
+      - cp -r Resources /app/share/antiword
+    sources:
+      - type: archive
+        url: https://web.archive.org/web/20221117105329if_/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz
+        sha256: 8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac
 
   - name: boost
     buildsystem: simple
@@ -92,6 +94,16 @@ modules:
           project-id: 3686
           url-template: https://poppler.freedesktop.org/poppler-$version.tar.xz
 
+  - name: unrtf
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.10.tar.gz
+        sha256: b49f20211fa69fff97d42d6e782a62d7e2da670b064951f14bbff968c93734ae
+        x-checker-data:
+          type: anitya
+          project-id: 5052
+          url-template: https://ftp.gnu.org/gnu/unrtf/unrtf-$version.tar.gz
+
   - name: perl
     cleanup:
       - '*.h'
@@ -123,6 +135,41 @@ modules:
           type: anitya
           project-id: 6175
           url-template: https://exiftool.org/Image-ExifTool-$version.tar.gz
+
+  - name: libzmq
+    sources:
+      - type: archive
+        url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz
+        sha256: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
+        x-checker-data:
+          type: anitya
+          project-id: 16245
+          url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
+
+  - python3-jupyter.json
+
+  - python3-lxml.json
+
+  - python3-mutagen.json
+
+  - python3-PyYAML.json
+
+  - name: xapian-core
+    config-opts:
+      - --disable-sse
+      - --disable-backend-chert
+      - --disable-backend-remote
+      - --disable-documentation
+    cleanup:
+      - /bin
+    sources:
+      - type: archive
+        url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
+        sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
+        x-checker-data:
+          type: anitya
+          project-id: 15919
+          url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
 
   - name: recoll
     buildsystem: meson
