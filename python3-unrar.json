@@ -1,0 +1,14 @@
+{
+    "name": "python3-unrar",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"unrar\" --no-build-isolation"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/bb/0b/53130ccd483e3db8c8a460cb579bdb21b458d5494d67a261e1a5b273fbb9/unrar-0.4-py3-none-any.whl",
+            "sha256": "0ce03e28bfa90415ee1a92c8d38cad8ea244427a59a8a39c0d42bac8727cfaa0"
+        }
+    ]
+}

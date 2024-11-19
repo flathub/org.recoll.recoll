@@ -166,6 +166,22 @@ modules:
 
   - python3-py7zr.json
 
+  - name: unrar
+    buildsystem: simple
+    build-commands:
+      - make lib
+      - cp libunrar.so /app/lib
+    sources:
+      - type: archive
+        url: https://www.rarlab.com/rar/unrarsrc-7.1.1.tar.gz
+        sha256: 2e9cbc9d1c250b40f4a7a6a363b6ccfa3703e190534979d18c8c4ac5ae35dafc
+        x-checker-data:
+          type: anitya
+          project-id: 13306
+          url-template: https://www.rarlab.com/rar/unrarsrc-$version.tar.gz
+
+  - python3-unrar.json
+
   - name: xapian-core
     config-opts:
       - --disable-sse
