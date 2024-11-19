@@ -164,6 +164,8 @@ modules:
 
   - python3-PyYAML.json
 
+  - python3-py7zr.json
+
   - name: xapian-core
     config-opts:
       - --disable-sse
