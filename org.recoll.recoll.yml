@@ -72,6 +72,29 @@ modules:
           project-id: 10159
           url-template: https://downloads.sourceforge.net/project/djvu/DjVuLibre/$version/djvulibre-$version.tar.gz
 
+  - name: ghostscript
+    config-opts:
+      - --disable-cups
+      - --disable-compile-inits
+      - --disable-dbus
+      - --disable-gtk
+      - --with-drivers=PS
+      - --without-ijs
+      - --without-libpaper
+      - --without-libtiff
+      - --without-local-zlib
+      - --without-pdftoraster
+      - --without-tesseract
+      - --without-x
+    sources:
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10040/ghostscript-10.04.0.tar.gz
+        sha256: c764dfbb7b13fc71a7a05c634e014f9bb1fb83b899fe39efc0b6c3522a9998b1
+        x-checker-data:
+          type: anitya
+          project-id: 1157
+          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.gz
+
   - name: boost
     buildsystem: simple
     build-commands:
