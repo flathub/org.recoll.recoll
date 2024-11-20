@@ -209,6 +209,9 @@ modules:
         path: chmlib-arm.patch
       - type: patch
         path: chmlib-c99.patch
+      - type: shell
+        commands:
+          - cp /usr/share/gnu-config/config.guess .
 
   - name: xapian-core
     config-opts:
