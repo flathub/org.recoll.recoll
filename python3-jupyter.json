@@ -9,6 +9,9 @@
             "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools_rust\" --no-build-isolation"
             ],
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "file",
@@ -33,6 +36,9 @@
                     "CARGO_HOME": "/run/build/python3-maturin/cargo"
                 }
             },
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "file",
@@ -47,6 +53,9 @@
             "buildsystem": "simple",
             "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scikit_build_core\" --no-build-isolation"
+            ],
+            "cleanup": [
+                "*"
             ],
             "sources": [
                 {
@@ -71,6 +80,9 @@
             "buildsystem": "simple",
             "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"hatchling\" --no-build-isolation --ignore-installed"
+            ],
+            "cleanup": [
+                "*"
             ],
             "sources": [
                 {
