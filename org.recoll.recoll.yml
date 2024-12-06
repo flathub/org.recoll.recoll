@@ -174,8 +174,8 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.05.tar.gz
-        sha256: 02f89403bd3478ec0cec820bbb4dc6b49cf8953655a27ae74120fb435ecc746b
+        url: https://exiftool.org/Image-ExifTool-13.06.tar.gz
+        sha256: be20c2eec849405a5d1be20e03666fc34661badd9a87f92c332000bf7949d3af
         x-checker-data:
           type: anitya
           project-id: 6175
@@ -246,8 +246,8 @@ modules:
       - /bin
     sources:
       - type: archive
-        url: https://oligarchy.co.uk/xapian/1.4.26/xapian-core-1.4.26.tar.xz
-        sha256: 9e6a7903806966d16ce220b49377c9c8fad667c8f0ffcb23a3442946269363a7
+        url: https://oligarchy.co.uk/xapian/1.4.27/xapian-core-1.4.27.tar.xz
+        sha256: bcbc99cfbf16080119c2571fc296794f539bd542ca3926f17c2999600830ab61
         x-checker-data:
           type: anitya
           project-id: 15919
