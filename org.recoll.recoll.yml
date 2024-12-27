@@ -174,8 +174,8 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.08.tar.gz
-        sha256: 72b3734ea308d09cfec7e9a1442dd0fc6af4d8879f06a1c845021b43cb5b4ef4
+        url: https://exiftool.org/Image-ExifTool-13.10.tar.gz
+        sha256: d15bae18b6ea205869f3fc815cbc35af9022a24506bb540d8cb2e85b7795b600
         x-checker-data:
           type: anitya
           project-id: 6175
