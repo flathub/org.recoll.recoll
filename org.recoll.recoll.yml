@@ -174,8 +174,8 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.12.tar.gz
-        sha256: d17bba99d8bb45f0cb05e1a5d7f96cf02fd2e87ca31383f66e921e14afae1627
+        url: https://exiftool.org/Image-ExifTool-13.13.tar.gz
+        sha256: 15223fc915a5a6b285bb6685012cbf58c0084f4ef3c0c971ea16addcccb5dd9d
         x-checker-data:
           type: anitya
           project-id: 6175
@@ -263,8 +263,8 @@ modules:
       - -Dsystemd=false
     sources:
       - type: archive
-        url: https://recoll.org/recoll-1.41.0.tar.gz
-        sha256: c219d62f0bb4fb2bd5d847e4e8097d76f27d0c4684259f0e7a3229768dcaf4b2
+        url: https://recoll.org/recoll-1.42.0.tar.gz
+        sha256: 538c8f2ce21ffe16566ecf440313028b50f25c526991e1b571ed7f0026a271c5
         x-checker-data:
           type: anitya
           project-id: 6256
