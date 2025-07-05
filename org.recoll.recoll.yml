@@ -263,8 +263,8 @@ modules:
       - -Dsystemd=false
     sources:
       - type: archive
-        url: https://recoll.org/recoll-1.43.2.tar.gz
-        sha256: 15b0d7927ba68e4b5c8a439f01ee052ad3e68202461876acabc7690fef263731
+        url: https://recoll.org/recoll-1.43.3.tar.gz
+        sha256: f0c75b67663f4b9ef3b412edd3cfa78a290b1645082e0daa4de0a09e7d282f79
         x-checker-data:
           type: anitya
           project-id: 6256
