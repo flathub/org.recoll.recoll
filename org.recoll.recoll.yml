@@ -122,8 +122,8 @@ modules:
       - -DENABLE_QT6=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-25.11.0.tar.xz
-        sha256: 63f155142b77349e2bccaef148e754e7506ab1641e713b83af4f54a8f8b15369
+        url: https://poppler.freedesktop.org/poppler-25.12.0.tar.xz
+        sha256: c18b40eb36b1a0c5b86e29ca054bf0770304583da4f2cdd42fe86eca6a20de48
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -174,8 +174,8 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.42.tar.gz
-        sha256: faac2e68b67972084bd4dd02bcbcc094dea5a41cc0afee1cdba1d089cf11ff18
+        url: https://exiftool.org/Image-ExifTool-13.43.tar.gz
+        sha256: 1beef514c895705b3e3eafea3602db6b4830697f37b997b6ae9795cdfa2608d1
         x-checker-data:
           type: anitya
           project-id: 6175
