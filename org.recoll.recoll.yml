@@ -286,3 +286,5 @@ modules:
           type: anitya
           project-id: 6256
           url-template: https://recoll.org/recoll-$version.tar.gz
+      - type: patch
+        path: appdata.patch
