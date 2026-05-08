@@ -1,9 +1,9 @@
 id: org.recoll.recoll
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 base: io.qt.qtwebengine.BaseApp
-base-version: 5.15-24.08
+base-version: 5.15-25.08
 command: recoll
 rename-desktop-file: recoll-searchgui.desktop
 rename-icon: recoll
@@ -138,6 +138,8 @@ modules:
           type: anitya
           project-id: 5052
           url-template: https://ftp.gnu.org/gnu/unrtf/unrtf-$version.tar.gz
+      - type: patch
+        path: unrtf-adjust-malloc-types.patch
 
   - name: untex
     buildsystem: simple
@@ -174,8 +176,8 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.57.tar.gz
-        sha256: 58f74f5cf84350693a00c4df236fd4810e5abaf25fab2d15eaa9dcc4872d4481
+        url: https://exiftool.org/Image-ExifTool-13.58.tar.gz
+        sha256: c84fb6b613a480a638225d44979bf44cd2f91c92b79f4d2aa43773c89fa4199e
         x-checker-data:
           type: anitya
           project-id: 6175
@@ -218,6 +220,7 @@ modules:
   - python3-unrar.json
 
   - name: chmlib
+    buildsystem: autotools
     cleanup:
       - /include
     sources:
@@ -234,7 +237,7 @@ modules:
         path: chmlib-c99.patch
       - type: shell
         commands:
-          - cp /usr/share/gnu-config/config.guess .
+          - cp /usr/share/automake-*/config.guess .
 
   - name: xapian-core
     config-opts:
@@ -253,6 +256,20 @@ modules:
           project-id: 15919
           url-template: https://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz
 
+  - name: jsoncpp
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DJSONCPP_WITH_TESTS=OFF
+    sources:
+      - type: archive
+        url: https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.7.tar.gz
+        sha256: 830bf352d822d8558e9d0eb19d640d2e38536b4b6699c30a4488da09d5b1df18
+        x-checker-data:
+          type: anitya
+          project-id: 7483
+          url-template: https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/$version.tar.gz
+
   - name: recoll
     buildsystem: meson
     build-options:
@@ -263,8 +280,8 @@ modules:
       - -Dsystemd=false
     sources:
       - type: archive
-        url: https://recoll.org/recoll-1.43.9.tar.gz
-        sha256: 8ab9680ed30ef4206fb48fa81227143b2da6cab1ac922796a2a364e5e6a9cd4f
+        url: https://recoll.org/recoll-1.43.16.tar.gz
+        sha256: 1fc11fcaea013aa027343db4fae0794491953d82b9b50777cb8751a78782c36a
         x-checker-data:
           type: anitya
           project-id: 6256
