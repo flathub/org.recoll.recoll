@@ -88,8 +88,8 @@ modules:
       - --without-x
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.gz
-        sha256: 2fc74362f9be6fae1b0a65d38fdcfd4f0b518cc3b07c5581fb661eb4d2e15251
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.gz
+        sha256: caf199e3f233f1290b27d0972d636f66c303355f2353309b7bfddf1edda06b3d
         x-checker-data:
           type: anitya
           project-id: 1157
