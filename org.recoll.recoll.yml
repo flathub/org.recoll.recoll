@@ -122,8 +122,8 @@ modules:
       - -DENABLE_QT6=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.08.0.tar.xz
-        sha256: dc906e68cea698109706ac6aa3d2c9d4512fcfcac42d90b8afcda486d1b9abd0
+        url: https://poppler.freedesktop.org/poppler-26.10.0.tar.xz
+        sha256: 6792cb7c69205007ad87d2e936cecc5b3a31fac29ab54ffc3175fdb6b2a6ce35
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -132,14 +132,12 @@ modules:
   - name: unrtf
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.10.tar.gz
-        sha256: b49f20211fa69fff97d42d6e782a62d7e2da670b064951f14bbff968c93734ae
+        url: https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.12.tar.gz
+        sha256: 59ad6062fb1d7ab4d89dd0316a3cee19f5e719525a5387b6da6b69b3178e2098
         x-checker-data:
           type: anitya
           project-id: 5052
           url-template: https://ftp.gnu.org/gnu/unrtf/unrtf-$version.tar.gz
-      - type: patch
-        path: unrtf-adjust-malloc-types.patch
 
   - name: untex
     buildsystem: simple
