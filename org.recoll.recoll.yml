@@ -16,7 +16,8 @@ finish-args:
   - --socket=fallback-x11
   - --socket=wayland
   - --device=dri
-  - --filesystem=home
+  - --filesystem=home:ro
+  - --env=RECOLL_CONFDIR=.var/app/org.recoll.recoll/
   - --env=ASPELL_CONF=dict-dir /app/share/dicts; local-data-dir /app/share/datadicts
   - --env=ANTIWORDHOME=/app/share/antiword
   - --env=JUPYTER_DATA_DIR=/app/share/jupyter
