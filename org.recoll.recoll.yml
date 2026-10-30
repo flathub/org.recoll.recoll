@@ -109,7 +109,7 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 6845
-          url-template: https://archives.boost.io/release/$version/source/boost_$major_$minor_$patch.tar.bz2
+          url-template: https://archives.boost.io/release/$version/source/boost_${major}_${minor}_${patch}.tar.bz2
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -159,7 +159,7 @@ modules:
         x-checker-data:
           type: html
           url: https://www.perl.org/get.html
-          pattern: (https://www.cpan.org/src/([\d\.]+)/perl-([\d\.]+).tar.gz)
+          pattern: (https://www.cpan.org/src/[\d\.]+/perl-([\d\.]+).tar.gz)
       - type: script
         dest-filename: configure
         commands:
