@@ -57,7 +57,8 @@ modules:
       - cp -r Resources /app/share/antiword
     sources:
       - type: archive
-        url: https://web.archive.org/web/20221117105329if_/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz
+        url: 
+          https://web.archive.org/web/20221117105329if_/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz
         sha256: 8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac
 
   - name: djvulibre
@@ -65,12 +66,14 @@ modules:
       - --disable-desktopfiles
     sources:
       - type: archive
-        url: https://downloads.sourceforge.net/project/djvu/DjVuLibre/3.5.30/djvulibre-3.5.30.tar.gz
+        url: 
+          https://downloads.sourceforge.net/project/djvu/DjVuLibre/3.5.30/djvulibre-3.5.30.tar.gz
         sha256: ee5e457d4cfebe566f94b99e5e3d3cc7f5c79ddb741c2ac2ba2e456f00329644
         x-checker-data:
           type: anitya
           project-id: 10159
-          url-template: https://downloads.sourceforge.net/project/djvu/DjVuLibre/$version/djvulibre-$version.tar.gz
+          url-template: 
+            https://downloads.sourceforge.net/project/djvu/DjVuLibre/$version/djvulibre-$version.tar.gz
 
   - name: ghostscript
     config-opts:
@@ -88,12 +91,14 @@ modules:
       - --without-x
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.gz
+        url: 
+          https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.gz
         sha256: caf199e3f233f1290b27d0972d636f66c303355f2353309b7bfddf1edda06b3d
         x-checker-data:
           type: anitya
           project-id: 1157
-          url-template: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.gz
+          url-template: 
+            https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${major}0$minor$patch/ghostscript-$version.tar.gz
 
   - name: boost
     buildsystem: simple
@@ -104,12 +109,13 @@ modules:
       - '*'
     sources:
       - type: archive
-        url: https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.bz2
-        sha256: 1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b
+        url: https://archives.boost.io/release/1.92.0/source/boost_1_92_0.tar.bz2
+        sha256: 5c1d40cb8e19adbf740a4ec2da35b3e58f3f5804b1dce44deb53df72193cbc6c
         x-checker-data:
           type: anitya
           project-id: 6845
-          url-template: https://archives.boost.io/release/$version/source/boost_${major}_${minor}_${patch}.tar.bz2
+          url-template: 
+            https://archives.boost.io/release/$version/source/boost_${major}_${minor}_${patch}.tar.bz2
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -154,8 +160,8 @@ modules:
       - '*.h'
     sources:
       - type: archive
-        url: https://www.cpan.org/src/5.0/perl-5.40.0.tar.gz
-        sha256: c740348f357396327a9795d3e8323bafd0fe8a5c7835fc1cbaba0cc8dfe7161f
+        url: https://www.cpan.org/src/5.0/perl-5.44.0.tar.gz
+        sha256: 3b855066b92491cb40e86affb1ca57d1a388aa43e51b91c7806a32c2f65f96c3
         x-checker-data:
           type: html
           url: https://www.perl.org/get.html
@@ -189,7 +195,8 @@ modules:
         x-checker-data:
           type: anitya
           project-id: 16245
-          url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
+          url-template: 
+            https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
 
   - python3-jupyter.json
 
