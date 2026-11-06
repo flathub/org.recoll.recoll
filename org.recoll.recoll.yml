@@ -174,12 +174,12 @@ modules:
       - make install
     sources:
       - type: archive
-        url: https://exiftool.org/Image-ExifTool-13.59.tar.gz
+        url: https://downloads.sourceforge.net/project/exiftool/Image-ExifTool-13.59.tar.gz
         sha256: 668ea3acececb7235fbd0f4900e72d5f12c9b07e5c778fd36cb1e9b5828fd65a
         x-checker-data:
           type: anitya
           project-id: 6175
-          url-template: https://exiftool.org/Image-ExifTool-$version.tar.gz
+          url-template: https://downloads.sourceforge.net/project/exiftool/Image-ExifTool-$version.tar.gz
 
   - name: libzmq
     sources:
